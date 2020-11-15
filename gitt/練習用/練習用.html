@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: flex-start;
+        }
+        .textbar{
+            display: flex;
+            align-items: center;
+        }
+        .margintopdown15px{
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Number guessing game</h1>
+    <div class="question margintopdown15px">We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</div>
+    <div class="textbar margintopdown15px">
+        <div class="textbar-hint margintopdown15px">Enter a guess:</div>
+        <input type="number" name="number" class="number margintopdown15px">
+        <button>go</button>
+    </div>
+    <div class="guesses margintopdown15px">Previous guesses</div>
+    <div class="alert margintopdown15px">alert</div>
+    <div class="margintopdown15px">Last guess was too low!</div>
+    <button class="margintopdown15px">try again</button>
+
+
+
+
+</body>
+
+</html>

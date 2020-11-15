@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #box{
+            width: 450px;
+            height: 200px;
+
+        }
+        #con1{
+            width: 450px;
+            height: 200px;
+            display: none;
+            background-color: aqua;
+
+        }
+        #con2{
+            width: 450px;
+            height: 200px;
+            display: none;
+            background-color: aquamarine;
+        }
+        #con3{
+            width: 450px;
+            height: 200px;
+            display: none;
+            background-color: blueviolet;
+            
+        }
+        #con4{
+            width: 450px;
+            height: 200px;
+            display: none;
+            background-color: coral;
+            
+        }
+        #con5{
+            width: 450px;
+            height: 200px; 
+            display: none;
+            background-color: darkgoldenrod;
+            
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    <h1>js圖片輪播</h1>
+    <div  id="box">
+        <div  id="con1"></div>
+        <div  id="con2"></div>
+        <div  id="con3"></div>
+        <div  id="con4"></div>
+        <div  id="con5"></div>
+    </div>
+    
+
+
+
+
+
+
+
+    <script>
+        var num=1;
+        var tnum=5;
+        var duration=1000;
+        function run(){myinterval = setInterval(autoshow,duration);}
+        function autoshow(){
+            for(var i=1; i<=tnum;i++){
+                document.getElementById("con"+i).style.display="none"
+                }
+                if(num<tnum){num++;}else{num=1;}
+                document.getElementById("con"+num).style.display="block"
+
+        }
+        run()
+
+
+    </script>
+</body>
+</html>

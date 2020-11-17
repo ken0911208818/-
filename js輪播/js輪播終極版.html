@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      #box {
+        width: 450px;
+        height: 200px;
+      }
+      #con1 {
+        width: 450px;
+        height: 200px;
+        display: block;
+        background-color: aqua;
+      }
+      #con2 {
+        width: 450px;
+        height: 200px;
+        display: none;
+        background-color: aquamarine;
+      }
+      #con3 {
+        width: 450px;
+        height: 200px;
+        display: none;
+        background-color: blueviolet;
+      }
+      #con4 {
+        width: 450px;
+        height: 200px;
+        display: none;
+        background-color: coral;
+      }
+      #con5 {
+        width: 450px;
+        height: 200px;
+        display: none;
+        background-color: darkgoldenrod;
+      }
+      #left-button {
+        display: none;
+      }
+      #buttonbox {
+        height: 50px;
+        width: 150px;
+      }
+      #buttonbox-left {
+        float: left;
+      }
+      #buttonbox-right {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>js圖片輪播</h1>
+    <div id="box">
+      <div id="con1">11111111</div>
+      <div id="con2">2222222222</div>
+      <div id="con3">333333333</div>
+      <div id="con4">44444444444</div>
+      <div id="con5">55555555</div>
+    </div>
+
+    <div id="buttonbox">
+      <div id="buttonbox-left">
+        <button id="left-button" onclick="turnleft()">上一張</button>
+      </div>
+      <div id="buttonbox-right">
+        <button id="right-button" onclick="turnright()">下一張</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var num = 1;
+    function turnright() {
+      num++;
+      if (num == 5) {
+        document.getElementById("right-button").style.display = "none";
+      }
+      if (num != 1) {
+        document.getElementById("left-button").style.display = "block";
+      }
+
+      for (var i = 1; i <= 5; i++) {
+        document.getElementById("con" + i).style.display = "none";
+      }
+      document.getElementById("con" + num).style.display = "block";
+      console.log(num);
+    }
+
+    function turnleft() {
+      num--;
+      if (num == 1) {
+        document.getElementById("left-button").style.display = "none";
+      }
+      if (num != 5) {
+        document.getElementById("right-button").style.display = "block";
+      }
+      for (var i = 1; i <= 5; i++) {
+        document.getElementById("con" + i).style.display = "none";
+      }
+      document.getElementById("con" + num).style.display = "block";
+      console.log(num);
+    }
+  </script>
+</html>

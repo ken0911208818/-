@@ -86,33 +86,41 @@
     var num = 1;
     function turnright() {
       num++;
-      if (num == 5) {
-        document.getElementById("right-button").style.display = "none";
-      }
-      if (num != 1) {
-        document.getElementById("left-button").style.display = "block";
-      }
-
-      for (var i = 1; i <= 5; i++) {
-        document.getElementById("con" + i).style.display = "none";
-      }
-      document.getElementById("con" + num).style.display = "block";
+      checkButton(num)
+      lastConClose("right", num)
       console.log(num);
     }
 
     function turnleft() {
       num--;
-      if (num == 1) {
-        document.getElementById("left-button").style.display = "none";
-      }
+      checkButton(num)
+      lastConClose("left", num)
+      console.log(num);
+    }
+
+    // 檢查button狀態
+    function checkButton(num) {
+      document.getElementById("right-button").style.display = "none";
+      document.getElementById("left-button").style.display = "none";
       if (num != 5) {
         document.getElementById("right-button").style.display = "block";
       }
-      for (var i = 1; i <= 5; i++) {
-        document.getElementById("con" + i).style.display = "none";
+      if (num != 1) {
+        document.getElementById("left-button").style.display = "block";
       }
+    }
+
+    // 將上一個的con關閉 
+    function lastConClose(direction, num) {
       document.getElementById("con" + num).style.display = "block";
-      console.log(num);
+    if (direction === "right") {
+      num--
+      document.getElementById("con" + num).style.display = "none";
+    }
+    if (direction === "left") {
+      num++
+      document.getElementById("con" + num).style.display = "none";
+    }
     }
   </script>
 </html>
